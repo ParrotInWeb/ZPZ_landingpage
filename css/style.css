@@ -1,0 +1,160 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 2018-12-14, 20:57:20
+    Author     : tkozik
+*/
+html {
+    font-family: Lato, Calibri, Helvetica, Arial, sans-serif;
+    color: #333;
+    
+}
+
+body {
+    margin: 0;
+    background-image: url('../images/background.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: top;
+}
+
+
+a, a:hover, a:active, a:focus, a:visited {
+    color: #5e0d16;
+    text-decoration: none;
+    font-size: 0.8rem;
+}
+
+
+hr {
+    border: 1px solid #5e0d16;
+    width: 100%;
+}
+
+h1 {
+    font-size: 1.3rem;
+    margin: 0;
+    font-weight: 400;
+}
+h2 {
+    text-align: center;
+    font-size: 1.3rem;
+    margin: 0;
+    margin-bottom: 10px;
+    font-weight: 400;
+}
+
+#main {
+    margin: auto;
+    margin-bottom: 20px;
+    width: 100%;
+    background-color: rgba(255,255,255,.85);
+    padding: 30px;
+}
+@media (min-width: 1200px) {
+    #main {
+        margin: 3vmin 1.5% 6vmin 50%;
+        border-radius: 15px;
+        box-shadow: 0px 0px 15px -7px #333;
+        width: 48.5%;
+        padding: 3vh 3%;
+    } 
+}
+
+
+/* HEADER */ 
+#header {
+    display: flex;
+    flex-wrap: wpap;
+    justify-content: center;
+    align-content: center;
+    justify-items: center;
+    align-items: center;
+}
+
+#logo {
+}
+
+#logo img {
+    width: 15vw;
+    min-width: 100px;
+    max-width: 150px;
+}
+#invitation {
+    margin-left: 3%;
+    text-align: center;
+}
+
+
+
+/* FORM */
+#form .form-group {
+    margin-bottom: 5px;
+}
+#form textarea {
+
+}
+#form label {
+    font-size: .8rem;
+}
+
+#form .form-control:focus,
+#form .form-control.is-invalid:focus, #form  .was-validated .form-control:invalid:focus,
+#form .form-control.is-valid:focus, #form  .was-validated .form-control:valid:focus
+{
+    border: 1px solid #5e0d16;
+    box-shadow: 0 0 0 0;
+}
+#form button {
+    display: block;
+    margin-top: 10px;
+    width: 100px;
+    padding: 5px;
+    background-color: #5e0d16;
+    border: 0px;
+    border-radius: 5px;
+    color: #FFF;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    text-align: center;
+}
+#form button:hover {
+    box-shadow: 0.2vh 0.2vh 1vh -0.5vh #5e0d16;
+    color: #FFF;
+}
+
+#form .btn-primary.focus, .btn-primary:focus {
+    box-shadow: 0 0 0 0;
+}
+
+
+
+/* MAINFOOTER */
+#mainfooter ol {
+    font-size: 0.8rem;
+}
+
+
+/* STOPKA */
+footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: #FFF4;
+    color: #333;
+    font-size: 0.8rem;
+    box-shadow: 0 0 5px -2px #333;
+}
+#copyright {    
+    margin: auto;
+    padding: 0.8vh;
+    text-align: center;
+    line-height: 1rem;
+}
+#copyright img {
+    height: 1rem;
+}

@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>Z pasji zrobione: Współpraca</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        <!-- CSS -->
+        <link rel="stylesheet" href="css/bootstrap.min.css" type="text/css" />
+        <link rel="stylesheet" href="css/style.css" type="text/css" />
+        
+        <!-- FONTS -->
+        <link href="https://fonts.googleapis.com/css?family=Great+Vibes|Lato" rel="stylesheet"> 
+
+        <!-- FAVICON -->
+        <link rel="icon" type="image/png" href="images/favicon.png" sizes="64x64" />
+    </head>
+    <body>
+        <div id="main">
+            <div id="header">
+                <div id="logo">
+                    <img src="images/logo.png" alt=""/>
+                </div>
+                <div id="invitation">
+                    <h1>Zaistniej w katalogu polskich produktów handmade.</h1>
+                    <h1>Zgłoś swój produkt, a my zadbamy o jego promocję!</h1>
+                </div>
+            </div>
+            <hr>
+            
+            
+            <div id="form" class="container">
+                <form class="needs-validation" novalidate id="zgloszenieProduktu" action="sendMail.php" method="POST">
+                    <div class="form-group">
+                        <div class="col">
+                            <input type="text" name="companyName" class="form-control form-control-sm" id="companyName" placeholder="Nazwa firmy">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col">
+                            <input type="text" name="nameAndSurname" class="form-control form-control-sm" id="nameAndSurname" placeholder="Imię i nazwisko *" required>
+                            <div class="invalid-feedback">
+                                Wprowadź dane osoby do kontaktu
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col">
+                            <input type="email" name="addressEmail" class="form-control form-control-sm" id="addressEmail" placeholder="Adres e-mail *" required>
+                            <div class="invalid-feedback">
+                                Wprowadź poprawny adres e-mail
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col">
+                            <input type="text" name="productName" class="form-control form-control-sm" id="productName" placeholder="Nazwa Twojego produktu *" required>
+                            <div class="invalid-feedback">
+                                Wprowadź nazwę jednego Twojego produktu
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col">
+                            <input type="url" name="productUrl" class="form-control form-control-sm" id="productUrl" placeholder="Strona WWW Twojego produktu">
+                            <div class="invalid-feedback">
+                                Wprowadź poprawny adres strony WWW produktu
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col">
+                            <textarea name="procuctDescribe" class="form-control form-control-sm" id="procuctDescribe" rows="3" placeholder="Opis Twojego produktu *" required></textarea>
+                            <div class="invalid-feedback">
+                                Napisz kilka zdań opisujących Twój produkt
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-check">
+                        <div class="col">
+                            <input type="checkbox" name="checkRodo" class="form-check-input" id="checkRodo" required>
+                            <label class="form-check-label" for="checkRodo">Korzystając z formularza, zgadzam się na przechowywanie i przetwarzanie moich danych przez zpasjizrobione.pl.</label>
+                            <div class="invalid-feedback">
+                                Udziel zgody na przetwarzanie danych osobowych. Bez niej nic nie możemy zrobić.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <button class="btn btn-primary" type="submit">Wyślij</button>
+                    </div>
+                </form>
+                <div class="row">
+                    <div class="col-12">
+                        <div class="alert alert-success contact__msg" style="display: none; margin-top: 20px" role="alert">
+                            Dziękujemy! Twoja wiadomość została wysłana!
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            
+            <hr>
+            
+            <div id="mainfooter">
+                <h2>Co zyskujesz?</h2>
+                <ol>
+                    <li>Artykuł reklamowy w katalogu polskich produktów handmade</li>
+                    <li>Reklamę w social media #zpasjizrobione</li>
+                    <li>Umieszczenie bezpośredniego linku do strony Twojego produktu</li>
+                </ol>
+                
+                    <a href="http://zpasjizrobione.pl/wspolpraca/">Poznaj warunki współpracy</a>
+            </div>
+            
+            
+        </div>
+        
+        
+        
+        <footer>
+            <div id="copyright">
+                Prawa autorskie: <a href="http://zpasjizrobione.pl">Z pasji zrobione</a>. Realizacja: <a href="">ParrotInWeb <img src="images/favicon_parrot_32x32_png.png" alt=""/></a> <?php echo date("Y"); ?>
+                
+            </div>
+        </footer>
+        
+
+        <!-- JS -->
+        <!-- JS -->
+        <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+        
+        <script>
+            // Example starter JavaScript for disabling form submissions if there are invalid fields
+        (function($) {
+            'use strict';
+            var form = $('#zgloszenieProduktu'),
+                message = $('.contact__msg'),
+                form_data;
+            window.addEventListener('load', function() {
+                // Fetch all the forms we want to apply custom Bootstrap validation styles to
+            var forms = document.getElementsByClassName('needs-validation');
+            // Loop over them and prevent submission
+            var validation = Array.prototype.filter.call(forms, function(form) {
+              form.addEventListener('submit', function(event) {
+                if (form.checkValidity() === false) {
+                  event.preventDefault();
+                  event.stopPropagation();
+                }
+                form.classList.add('was-validated');
+              }, false);
+            });
+          }, false);
+        
+            // Success function
+            function done_func(response) {
+                //$('#checkRodo').prop('checked',false);
+                message.fadeIn().removeClass('alert-danger').addClass('alert-success');
+                message.text(response);
+                setTimeout(function () {
+                    message.fadeOut();
+                }, 5000);
+                form.find('input:not([type="submit"])').val('');
+                form.removeClass('was-validated');
+            }
+            // fail function
+            function fail_func(data) {
+                //$('#checkRodo').prop('checked',false);
+                message.fadeIn().removeClass('alert-success').addClass('alert-danger');
+                message.text('Wiadomość nie została wysłana. Sprawdź poprawość wypełnionych danych w formularzu lub spróbuj później.');
+                setTimeout(function () {
+                    message.fadeOut();
+                }, 5000);
+            }
+
+            form.submit(function (e) {
+                e.preventDefault();
+                form_data = $(this).serialize();
+                $.ajax({
+                    type: 'POST',
+                    url: form.attr('action'),
+                    data: form_data
+                })
+                .done(done_func)
+                .fail(fail_func);
+            });
+
+        })(jQuery);
+        </script>        
+    </body>
+</html>
